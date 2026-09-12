@@ -22,6 +22,19 @@ public class BaseTests {
     }
 
     @Test
+    void MoreWaiterThenProggers() throws Exception {
+        int waitersCount = 200;
+        int programmersCount = 10;
+        int foodCount = 100;
+        Playground playground = new Playground(waitersCount, programmersCount, foodCount);
+
+        List<Integer> eaten = playground.start();
+
+        assertEquals(programmersCount, eaten.size());
+        assertEquals(foodCount, eaten.stream().mapToInt(Integer::intValue).sum());
+    }
+
+    @Test
     void nobodyEatsWhenThereIsNoFood() throws Exception {
         int waitersCount = 2;
         int programmersCount = 5;
