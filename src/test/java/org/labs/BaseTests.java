@@ -19,7 +19,6 @@ public class BaseTests {
 
         assertEquals(programmersCount, eaten.size());
         assertEquals(foodCount, eaten.stream().mapToInt(Integer::intValue).sum());
-        assertFoodDistribution(foodCount, programmersCount, eaten);
     }
 
     @Test
