@@ -1,6 +1,7 @@
 package org.labs;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Waiter implements Callable<Integer> {
@@ -12,6 +13,7 @@ public class Waiter implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
+        Thread.sleep(ThreadLocalRandom.current().nextInt(10, 50));
         while (true) {
             int food = this.food.get();
             if (food <= 0) {

@@ -1,9 +1,11 @@
 package org.labs;
 
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Progger implements Callable<Integer> {
@@ -35,6 +37,7 @@ public class Progger implements Callable<Integer> {
             }
             firstSpoon.lock();
             secondSpoon.lock();
+            Thread.sleep(ThreadLocalRandom.current().nextInt(50, 100));
             eaten += 1;
             secondSpoon.unlock();
             firstSpoon.unlock();

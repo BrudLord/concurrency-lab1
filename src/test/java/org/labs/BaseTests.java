@@ -12,7 +12,7 @@ public class BaseTests {
     void allFoodIsEaten() throws Exception {
         int waitersCount = 2;
         int programmersCount = 5;
-        int foodCount = 10000;
+        int foodCount = 100;
         Playground playground = new Playground(waitersCount, programmersCount, foodCount);
 
         List<Integer> eaten = playground.start();
@@ -51,7 +51,7 @@ public class BaseTests {
     void everyoneEatsApproximatelyTheSameAmount() throws Exception {
         int waitersCount = 10;
         int programmersCount = 10;
-        int foodCount = 1000000;
+        int foodCount = 1000;
         Playground playground = new Playground(waitersCount, programmersCount, foodCount);
 
         List<Integer> eaten = playground.start();
