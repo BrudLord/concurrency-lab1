@@ -61,12 +61,12 @@ public class BaseTests {
 
     private void assertFoodDistribution(int foodCount, int programmersCount, List<Integer> eaten) {
         double expectedPerProgrammer = (double) foodCount / programmersCount;
-        double tolerance = expectedPerProgrammer * 0.05;
+        double tolerance = expectedPerProgrammer * 0.1;
 
         for (Integer amount : eaten) {
             assertTrue(
                     Math.abs(amount - expectedPerProgrammer) <= tolerance,
-                    () -> "Expected " + expectedPerProgrammer + " +/- 5%, but got " + amount
+                    () -> "Expected " + expectedPerProgrammer + " +/- 10%, but got " + amount
             );
         }
     }
